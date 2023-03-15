@@ -55,11 +55,17 @@ createApp({
 
         }, 
         autoPlay(){
-            setInterval(this.gotoNext,3000);
-        }
+           return play = setInterval(this.gotoNext,3000);
+        },
+        stopPlay(){
+            clearInterval(play);
 
+        },
+        resumeAutoPlay(){
+            this.autoPlay();
+        }
     },
     mounted(){
         this.autoPlay();
-    }
+    },
 }).mount('#app')

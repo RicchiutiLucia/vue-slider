@@ -16,7 +16,7 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item">
+                <div class="item" @mouseover = "stopPlay"  @mouseleave ="resumeAutoPlay">
                     <img :src="slides[activeImage].image" :alt="slides[activeImage].title" />
                     <div class="text">
                         <h3>{{slides[activeImage].title}}</h3>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
 
-                <div class="thumbs">
+                <div class="thumbs"  @mouseover = "stopPlay"  @mouseleave ="resumeAutoPlay">
                     <div class="prev " @click="gotoPrev"></div>
                     <div class="next" @click="gotoNext"></div>
                     <div v-for="(img,index) in slides" class="thumb" :class="(activeImage == index)?'active':''" @click="changeImage(index)">
