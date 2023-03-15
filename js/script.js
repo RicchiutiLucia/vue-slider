@@ -53,8 +53,13 @@ createApp({
         changeImage(newActiveImage){
             this.activeImage = newActiveImage;
 
+        }, 
+        autoPlay(){
+            setInterval(this.gotoNext,3000);
         }
 
-
+    },
+    mounted(){
+        this.autoPlay();
     }
 }).mount('#app')
