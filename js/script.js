@@ -56,10 +56,11 @@ createApp({
 
         }, 
         autoPlay(){
-           return play = setInterval(this.gotoNext,3000);
+           this.play = setInterval(this.gotoNext,3000);
         },
         stopPlay(){
-            clearInterval(play);
+            clearInterval(this.play);
+            this.play = null;
 
         },
         resumeAutoPlay(){
